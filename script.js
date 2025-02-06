@@ -1,3 +1,4 @@
+// Logical side
 const recordBtn = document.querySelector(".record"),
   result = document.querySelector(".result"),
   downloadBtn = document.querySelector(".download"),
@@ -116,3 +117,5 @@ clearBtn.addEventListener("click", () => {
   result.innerHTML = "";
   downloadBtn.disabled = true;
 });
+
+// Hey! If you like this project, drop a ⭐ on GitHub. It means a lot! – N Josue Dev 😊
