@@ -35,7 +35,7 @@ function speechToText() {
         let speechResult = event.results[0][0].transcript;
          
         if(speechResult.includes("open my GitHub")){
-          window.open("https://github.com/njosueofficial");
+          window.open("https://github.com/njosuedev");
         }
         else{
           result.innerHTML += " " + speechResult;
