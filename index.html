@@ -1,66 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth bg-gray-100">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>converter</title>
+    <title>Speech to Text Converter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <div class="container">
-      <p class="heading">speech to text coverter</p>
-      <div class="options">
-        <div class="anguage">
-          <p>Language</p>
-          <select name="input-language" id="language"></select>
-        </div>
+  <body class="min-h-screen flex flex-col justify-between font-sans">
+
+    <!-- Main Container -->
+    <main class="max-w-2xl mx-auto p-4 mt-10 bg-white shadow-2xl rounded-2xl space-y-6">
+
+      <!-- Heading -->
+      <h1 class="text-2xl font-bold text-blue-700 text-center">🎙️ Speech to Text Converter</h1>
+
+      <!-- Language Selector -->
+      <div class="space-y-2">
+        <label for="language" class="block font-semibold text-gray-700">Select Language</label>
+        <select id="language" name="input-language" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <!-- Filled dynamically -->
+        </select>
       </div>
-      <div class="line"></div>
-      <button class="btn record">
-        <div class="icon">
-          <ion-icon name="mic-outline"></ion-icon>
-          <img src="bars.svg" alt="" />
-        </div>
-        <p>Start Listening</p>
-      </button>
-      <p class="heading">Result :</p>
-      <div
-        class="result"
-        spellcheck="false"
-        placeholder="Text will be shown here"
-      >
-        <p class="interim"></p>
-      </div>
-      <div class="buttons">
-        <button class="btn clear">
-          <ion-icon name="trash-outline"></ion-icon>
-          <p>Clear</p>
-        </button>
-        <button class="btn download" disabled>
-          <ion-icon name="cloud-download-outline"></ion-icon>
-          <p>Download</p>
+
+      <!-- Divider -->
+      <hr class="border-t border-gray-300" />
+
+      <!-- Record Button -->
+      <div class="flex justify-center">
+        <button class="btn record bg-blue-600 text-white px-6 py-3 rounded-full flex items-center gap-3 shadow-md hover:bg-blue-700 transition">
+          <ion-icon name="mic-outline" class="text-xl"></ion-icon>
+          <img src="bars.svg" alt="bars" class="w-5 h-5 hidden sm:inline" />
+          <span>Start Listening</span>
         </button>
       </div>
-    </div>
-    <footer>
-      <code>&copy; N Josue Dev 2025 </code>
+
+      <!-- Result Area -->
+      <div>
+        <h2 class="text-lg font-semibold text-gray-700 mb-1">Result:</h2>
+        <div class="result min-h-[120px] p-4 bg-gray-100 rounded-lg border border-gray-300 text-gray-800 overflow-auto">
+          <p class="interim"></p>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-between">
+        <button class="btn clear w-full sm:w-auto flex items-center justify-center gap-2 bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-md">
+          <ion-icon name="trash-outline" class="text-lg"></ion-icon>
+          <span>Clear</span>
+        </button>
+        <button class="btn download w-full sm:w-auto flex items-center justify-center gap-2 bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-md disabled:opacity-50" disabled>
+          <ion-icon name="cloud-download-outline" class="text-lg"></ion-icon>
+          <span>Download</span>
+        </button>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center mt-10 mb-4 text-sm text-gray-500">
+      <code>&copy; N Josue Dev 2025</code>
     </footer>
 
-    <!-- IONICONS -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-    <!-- LANGUAGES -->
+    <!-- Languages & Script -->
     <script src="languages.js"></script>
-    <!-- SCRIPT -->
     <script src="script.js"></script>
-
   </body>
 </html>
